@@ -14,3 +14,13 @@ def encrypt(plaintext, key):
         if p.isalpha():
             if key_index >= len(key):
                 raise ValueError("Key length is not enough.")
+            
+            k = key[key_index].upper()
+
+            p_num = ord(p) - ord('A')
+            k_num = ord(k) - ord('A')
+
+            c_num = (p_num + k_num) % 26
+            result += chr(c_num + ord('A'))
+
+            key_index += 1
