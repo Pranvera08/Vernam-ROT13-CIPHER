@@ -24,3 +24,7 @@ def encrypt(plaintext, key):
             result += chr(c_num + ord('A'))
 
             key_index += 1
+        else:
+            result += p
+
+    return result
