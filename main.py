@@ -1,6 +1,7 @@
 import time
 
-
+from vernam_encrypt import encrypt as v_encrypt, generate_key
+from vernam_decrypt import decrypt as v_decrypt
 
 # COLORS
 GREEN="\033[92m"
@@ -39,10 +40,27 @@ def main():
             option = input("Select: ")
 
             if option == "1":
-                print(YELLOW + "Vernam encryption will be added soon." + RESET)
+                text = input("Enter plaintext: ")
+
+                letters_only = sum(1 for ch in text if ch.isalpha())
+                key = generate_key(letters_only)
+
+                loading("Encrypting")
+                cipher = v_encrypt(text, key)
+
+                print("/n" + GREEN + "Ciphertext:" + RESET, cipher)
+                print(CYAN + "Key:" + RESET, key)
 
             elif option == "2":
-                print(YELLOW + "Vernam decryption will be added soon." + RESET)
+                cipher = input("Enter ciphertext: ")
+                key = input("Enter key: ")
+
+                try:
+                    loading("Decrypting")
+                    plain = v_decrypt(cipher, key)
+                    print(GREEN + "Decrypted:" + RESET, plain)
+                except Exception as e:
+                    print(RED + "Error:" + RESET,e)
 
             else:
                 print(RED + "Invalid option!" + RESET)
