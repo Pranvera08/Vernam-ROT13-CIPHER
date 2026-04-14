@@ -2,6 +2,7 @@ import time
 
 from vernam_encrypt import encrypt as v_encrypt, generate_key
 from vernam_decrypt import decrypt as v_decrypt
+from rot13 import encrypt as r_encrypt, decrypt as r_decrypt
 
 # COLORS
 GREEN="\033[92m"
@@ -23,6 +24,9 @@ def loading(message="Processing", dots=3, delay=0.4):
         print(".", end="", flush=True)
     print()
 
+def line():
+    print("=" * 28)
+
 def main():
     type_text(CYAN + "Welcome to the Crypto Tool." + RESET, 0.04)
 
@@ -34,6 +38,7 @@ def main():
 
         choice = input("Enter your choice: ")
 
+        # VERNAM
         if choice == "1":
             print("/n1. Encrypt")
             print("2. Decrypt")
@@ -65,20 +70,24 @@ def main():
             else:
                 print(RED + "Invalid option!" + RESET)
 
+        # ROT13
         elif choice == "2":
             print("/n1. Encrypt")
             print("2. Decrypt")
             option = input("Select: ")
 
-            if option == "1":
-                print()
-            elif option == "2":
-                print()
+            text = input("Enter plaintext: ")
 
+            if option == "1":
+                loading("Encrypting")
+                print(GREEN + "Encrypted:" + RESET, r_encrypt(text))
+            elif option == "2":
+                loading("Decrypting")
+                print(GREEN + "Decrypted:" + RESET, r_decrypt(text))
             else:
                 print(RED + "Invalid option!" + RESET)
 
-
+        # EXIT
         elif choice == "0":
             loading("Closing program", 3, 0.3)
             print(CYAN + "Progam ended." + RESET)
