@@ -10,7 +10,7 @@ def encrypt(plaintext, key):
 
     plaintext = plaintext.upper()
 
-        for p in plaintext:
+    for p in plaintext:
         if p.isalpha():
             if key_index >= len(key):
                 raise ValueError("Key length is not enough.")
