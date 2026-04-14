@@ -1,1 +1,5 @@
-print("orlind bajraktari 133")
+def transform(text):
+    """
+    ROT13 transformation (same for encrypt/decrypt)
+    """
+    output = []
