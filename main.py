@@ -65,6 +65,19 @@ def main():
             else:
                 print(RED + "Invalid option!" + RESET)
 
+        elif choice == "2":
+            print("/n1. Encrypt")
+            print("2. Decrypt")
+            option = input("Select: ")
+
+            if option == "1":
+                print()
+            elif option == "2":
+                print()
+
+            else:
+                print(RED + "Invalid option!" + RESET)
+
 
         elif choice == "0":
             loading("Closing program", 3, 0.3)
