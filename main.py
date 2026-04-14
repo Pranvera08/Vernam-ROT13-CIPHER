@@ -31,7 +31,7 @@ def main():
     type_text(CYAN + "Welcome to the Crypto Tool." + RESET, 0.04)
 
     while True:
-        print("/n"+ CYAN + "========== CRYPTO TOOL =========="+ RESET)
+        print(CYAN + "========== CRYPTO TOOL =========="+ RESET)
         print("1. Vernam Cipher")
         print("2. ROT13")
         print("0. EXIT")
@@ -40,7 +40,7 @@ def main():
 
         # VERNAM
         if choice == "1":
-            print("/n"+"1. Encrypt")
+            print("1. Encrypt")
             print("2. Decrypt")
             option = input("Select: ")
 
@@ -53,7 +53,7 @@ def main():
                 loading("Encrypting")
                 cipher = v_encrypt(text, key)
 
-                print("/n" + GREEN + "Ciphertext:" + RESET, cipher)
+                print( GREEN + "Ciphertext:" + RESET, cipher)
                 print(CYAN + "Key:" + RESET, key)
 
             elif option == "2":
@@ -72,7 +72,7 @@ def main():
 
         # ROT13
         elif choice == "2":
-            print("/n"+"1. Encrypt")
+            print("1. Encrypt")
             print("2. Decrypt")
             option = input("Select: ")
 
