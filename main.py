@@ -76,12 +76,15 @@ def main():
             print("2. Decrypt")
             option = input("Select: ")
 
-            text = input("Enter plaintext: ")
 
             if option == "1":
+                text = input("Enter plaintext: ")
+
                 loading("Encrypting")
                 print(GREEN + "Encrypted:" + RESET, r_encrypt(text))
             elif option == "2":
+                text = input("Enter ciphertext: ")
+
                 loading("Decrypting")
                 print(GREEN + "Decrypted:" + RESET, r_decrypt(text))
             else:
