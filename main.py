@@ -40,7 +40,7 @@ def main():
 
         # VERNAM
         if choice == "1":
-            print("/n1. Encrypt")
+            print("/n"+"1. Encrypt")
             print("2. Decrypt")
             option = input("Select: ")
 
@@ -72,7 +72,7 @@ def main():
 
         # ROT13
         elif choice == "2":
-            print("/n1. Encrypt")
+            print("/n"+"1. Encrypt")
             print("2. Decrypt")
             option = input("Select: ")
 
