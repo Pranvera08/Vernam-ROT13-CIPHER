@@ -13,3 +13,5 @@ def transform(text):
             output.append(ch)
 
     return "".join(output)
+def encrypt(text):
+    return transform(text)
