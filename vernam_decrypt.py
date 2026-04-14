@@ -10,12 +10,12 @@ def decrypt(cipher, key):
                 raise ValueError("Key length is not enough.")
 
             k = key[key_index].upper()
-
             c_num = ord(c) - ord('A')
             k_num = ord(k) - ord('A')
 
             p_num = (c_num - k_num) % 26
-            result += chr(p_num + ord('A'))
+            decrypted_char = chr(p_num + ord('A'))
+            result += decrypted_char
 
             key_index += 1
         else:
