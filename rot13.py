@@ -3,7 +3,7 @@ def transform(text):
     ROT13 transformation (same for encrypt/decrypt)
     """
     output = []
- for ch in text:
+    for ch in text:
         if ch.isalpha():
             shift = 13
             start = ord('A') if ch.isupper() else ord('a')
@@ -13,9 +13,3 @@ def transform(text):
             output.append(ch)
 
     return "".join(output)
-def encrypt(text):
-    return transform(text)
-
-
-def decrypt(text):
-    return transform(text)
