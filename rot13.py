@@ -15,3 +15,5 @@ def transform(text):
     return "".join(output)
 def encrypt(text):
     return transform(text)
+def decrypt(text):
+    return transform(text)
