@@ -4,7 +4,6 @@ RED="\033[91m"
 CYAN="\033[96m"
 YELLOW="\033[93m"
 RESET="\033[0m"
-
 def main():
     while True:
         print("/n"+ CYAN + "========== CRYPTO TOOL =========="+ RESET)
