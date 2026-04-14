@@ -33,7 +33,22 @@ def main():
 
         choice = input("Enter your choice: ")
 
-        if choice == "0":
+        if choice == "1":
+            print("/n1. Encrypt")
+            print("2. Decrypt")
+            option = input("Select: ")
+
+            if option == "1":
+                print(YELLOW + "Vernam encryption will be added soon." + RESET)
+
+            elif option == "2":
+                print(YELLOW + "Vernam decryption will be added soon." + RESET)
+
+            else:
+                print(RED + "Invalid option!" + RESET)
+
+
+        elif choice == "0":
             loading("Closing program", 3, 0.3)
             print(CYAN + "Progam ended." + RESET)
             break
