@@ -2,6 +2,7 @@ import time
 
 from vernam_encrypt import encrypt as v_encrypt, generate_key
 from vernam_decrypt import decrypt as v_decrypt
+
 # COLORS
 GREEN="\033[92m"
 RED="\033[91m"
