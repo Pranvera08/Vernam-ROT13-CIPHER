@@ -1,62 +1,67 @@
 # Projekti nga lënda Siguria e të Dhënave
 
-## Tema e projektit
-Ky projekt implementon dy algoritme klasike të kriptimit:
+# Crypto Tool - Vernam & ROT13
 
-- **Vernam Cipher**
-- **ROT13**
+Ky është një program në Python që funksionon në terminal. Ai i lejon përdoruesit të enkriptojnë (kriptojnë) dhe dekriptojnë (zbulojnë) mesazhe duke përdorur dy algoritme të njohura kriptografike: **Vernam Cipher** dhe **ROT13**.
 
-Programi është ndërtuar në gjuhën **Python** dhe ofron mundësi për:
-- enkriptim
-- dekriptim
-- gjenerim automatik të çelësit për Vernam Cipher
-- ndërfaqe të thjeshtë në terminal
+## 📌 Përshkrimi i Algoritmeve
 
----
+### 1. Vernam Cipher (One-Time Pad)
+Algoritmi Vernam është një metodë ku çdo shkronjë e mesazhit kombinohet matematikisht me një shkronjë të një çelësi të gjeneruar rastësisht.
+* **Enkriptimi:** Mblidhen vlerat e shkronjave të mesazhit dhe çelësit.
+* **Dekriptimi:** Zbritet vlera e çelësit nga shkronja e kriptuar për t'u kthyer tek mesazhi origjinal.
+* **Rregulli Kryesor:** Çelësi duhet të jetë të paktën i njëjtë në gjatësi me tekstin që po kriptohet. Programi ynë e gjeneron këtë çelës automatikisht për ty.
 
-## Përmbajtja e projektit
-
-Projekti përbëhet nga këto fajlla:
-
-- `main.py` – fajlli kryesor për ekzekutimin e programit
-- `vernam_encrypt.py` – përmban funksionin për enkriptim me Vernam Cipher dhe gjenerimin e çelësit
-- `vernam_decrypt.py` – përmban funksionin për dekriptim me Vernam Cipher
-- `rot13.py` – përmban funksionet për enkriptim dhe dekriptim me ROT13
+### 2. ROT13 (Rotate by 13 places)
+ROT13 është një variant i thjeshtë i Shifrës së Çezarit. Ky algoritëm e zëvendëson çdo shkronjë me shkronjën që ndodhet 13 pozicione më vonë në alfabetin anglez. 
+* Meqenëse alfabeti ka 26 shkronja, zhvendosja me 13 pozicione dy herë të kthen aty ku ishe. Prandaj, i njëjti funksion përdoret si për të enkriptuar ashtu edhe për të dekriptuar.
 
 ---
 
-## Përshkrimi i algoritmeve
+## 🚀 Udhëzimet e Ekzekutimit
 
-### 1. Vernam Cipher
-Vernam Cipher është një metodë kriptimi simetrik ku çdo shkronjë e plaintext-it kombinohet me një shkronjë të çelësit.  
-Në këtë projekt:
-- teksti kthehet në shkronja të mëdha
-- çelësi gjenerohet automatikisht sipas numrit të shkronjave
-- karakteret jo alfabetike ruhen pa ndryshim
-- për dekriptim përdoret i njëjti çelës
+Për ta përdorur këtë program, duhet të keni të instaluar **Python 3** në kompjuterin tuaj. Sigurohuni që skedarët (`main.py`, `vernam_encrypt.py`, `vernam_decrypt.py`, `rot13.py`) të jenë të gjithë në të njëjtën dosje.
 
-**Formula e enkriptimit:**
-C = (P + K) mod 26
+1. Hapni **Terminalin** (në Mac/Linux) ose **Command Prompt** (në Windows).
+2. Shkoni te dosja ku ndodhet projekti duke përdorur komandën `cd`. Për shembull:
+   ```bash
+   cd Desktop/Projekti_Kriptografi
 
-**Formula e dekriptimit:**
-P = (C - K) mod 26
+## Shembuj te rrezulltateve
+## Shembull 1 per Veram Cypher
 
-Ku:
-- `P` = plaintext
-- `K` = key
-- `C` = ciphertext
+========== CRYPTO TOOL ==========
+1. Vernam Cipher
+2. ROT13
+0. EXIT
+Enter your choice: 1
+1. Encrypt
+2. Decrypt
+Select: 1
+Enter plaintext: HELLO WORLD
+Processing...
+Ciphertext: EQNVZ XMCKL
+Key: XMCKL EQNVZ
 
----
+## Kur Dekriptojm me duke perdorur qelsin e lartcekur
 
-### 2. ROT13
-ROT13 është një variant i Caesar Cipher, ku çdo shkronjë zhvendoset për **13 pozita** në alfabet.
+Select: 2
+Enter ciphertext: EQNVZ XMCKL
+Enter key: XMCKL EQNVZ
+Decrypting...
+Decrypted: HELLO WORLD
 
-Karakteristikat e ROT13:
-- përdor të njëjtin funksion si për enkriptim ashtu edhe për dekriptim
-- shkronjat e mëdha dhe të vogla ruhen sipas formës
-- karakteret speciale dhe hapësirat nuk ndryshohen
+## Shembull 2 per Rot13
 
-Shembull:
-- `A` bëhet `N`
-- `B` bëhet `O`
-- `HELLO` bëhet `URYYB`
+========== CRYPTO TOOL ==========
+1. Vernam Cipher
+2. ROT13
+0. EXIT
+Enter your choice: 2
+1. Encrypt
+2. Decrypt
+Select: 1
+Enter plaintext: Kriptografia eshte e bukur!
+Encrypting...
+Encrypted: Xevcgbtensvn rfugr r ohxhe!
+
